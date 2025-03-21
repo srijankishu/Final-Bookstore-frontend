@@ -10,7 +10,7 @@ const Mybooks = () => {
     const fetchPurchasedBooks = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get('http://localhost:4001/purchase/my-purchases', {
+        const response = await axios.get('https://final-bookstore-backend.vercel.app/purchase/my-purchases', {
           headers: { Authorization: `Bearer ${token}` },
 
         });
