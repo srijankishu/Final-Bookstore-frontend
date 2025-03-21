@@ -35,7 +35,7 @@ const PurchasedBooks = ({ item }) => {
          return; 
         }
         try {
-            const response = await axios.post("http://localhost:4001/purchase/delete-purchased-book", {
+            const response = await axios.post("https://final-bookstore-backend.vercel.app/purchase/delete-purchased-book", {
                 bookId: bookId  
             });
 
