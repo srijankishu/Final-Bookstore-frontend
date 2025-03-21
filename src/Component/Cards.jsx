@@ -53,7 +53,7 @@ const Cards = ({ item }) => {
       const token = localStorage.getItem("token"); // Get token from local storage
 
       const response = await axios.post(
-        "http://localhost:4001/purchase/buy",
+        "https://final-bookstore-backend.vercel.app/purchase/buy",
         { bookId: item._id }, // Send book ID
         {
           headers: { Authorization: `Bearer ${token}` }, // Include auth token
