@@ -4,7 +4,7 @@ import image from '../image/banner.png';
 export const Banner = () => {
   return (
     <>
-      <div className="w-full md:px-20 px-4 flex flex-col md:flex-row">
+      <div className="w-full md:px-20 px-4 flex flex-col md:flex-row"> //there is update 
         <div className="order-2 md:order-1 md:w-1/2 mt-20 md:mt-20">
         <div className="mt-2 md:mt-3 lg:mt-10 space-y-12">
             <h1 className="text-4xl font-bold dark:text-white text-black">
