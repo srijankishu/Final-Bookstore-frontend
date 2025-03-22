@@ -183,45 +183,41 @@ const Cards = ({ item }) => {
 
 
   return (
-    <div className='mt-4'>
+   <div className='mt-4'>
     <div className="card bg-base-100 w-90 m-2 shadow-xl hover:scale-105 duration-200 bg-white text-black dark:bg-slate-900 dark:text-white dark:border">
       <figure>
         <img src={item.image} alt="Book Cover" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-lg sm:text-base">  {/* Smaller text on small devices */}
+        <h2 className="card-title">
           {item.name}
-          <div className="badge badge-secondary text-xs sm:text-[10px]">{item.category}</div>
+          <div className="badge badge-secondary">{item.category}</div>
+         
         </h2>
-        <p className="text-sm sm:text-xs">Genre: {item.title}</p>
-        <p className="text-sm sm:text-xs">
-          Author: <span className="italic">{item.author}</span>
-        </p>
+        <p>Genre: {item.title}</p>
+        <p> Author: <span className="italic">{item.author}</span> </p>
         <div className="card-actions justify-between">
+         
           <div>
-            {pdfName ? (
-              item.price === 0 ? (
-                <div className="flex justify-center w-full">
-                  <button className="cursor-pointer px-4 py-1 rounded-full border-[2px] hover:bg-pink-500 
-                  hover:text-white duration-300 badge-outline text-sm sm:text-xs"
-                    onClick={showPdf}
-                  >
-                    Read
-                  </button>
-                </div>
-              ) : (
-                <div
-                  className="cursor-pointer px-4 py-1 rounded-full border-[2px] hover:bg-pink-500 
-                  hover:text-white duration-300 badge-outline text-sm sm:text-xs"
-                  onClick={handlePayment}
-                >
-                  ${item.price}
-                </div>
-              )
-            ) : (
-              <p className="text-sm sm:text-xs">No PDF available</p>
-            )}
-          </div>
+{pdfName ? (
+  item.price === 0 ? (
+    <div className="flex justify-center w-full">
+      <button className="cursor-pointer px-4 py-1 rounded-full border-[2px] hover:bg-pink-500 
+      hover:text-white duration-300 badge-outline" onClick={showPdf}>Read</button>
+    </div>
+  ) : (
+    <div
+      className="cursor-pointer px-4 py-1 rounded-full border-[2px] hover:bg-pink-500 
+      hover:text-white duration-300 badge-outline"
+      onClick={handlePayment}
+    >
+      ${item.price}
+    </div>
+  )
+) : (
+  <p>No PDF available</p>
+)}
+</div>
         </div>
       </div>
     </div>
