@@ -20,7 +20,7 @@ const Cards = ({ item }) => {
   useEffect(() => {
     const getPdf = async () => {
       try {
-        const result = await axios.get("http://localhost:4001/get-files");
+        const result = await axios.get("https://final-bookstore-backend.vercel.app/get-files");
         setAllImage(result.data.data); // Assuming the response contains an array of PDFs
       } catch (error) {
         console.error("Error fetching PDFs:", error.response ? error.response.data : error.message);
@@ -53,7 +53,7 @@ const Cards = ({ item }) => {
       const token = localStorage.getItem("token"); // Get token from local storage
 
       const response = await axios.post(
-        "http://localhost:4001/purchase/buy",
+        "https://final-bookstore-backend.vercel.app/purchase/buy",
         { bookId: item._id }, // Send book ID
         {
           headers: { Authorization: `Bearer ${token}` }, // Include auth token
@@ -101,7 +101,7 @@ const Cards = ({ item }) => {
  
       
       const decodedToken = jwtDecode(localStorage.getItem('token'));     
-      const response = await axios.post('http://localhost:4001/create-order', {
+      const response = await axios.post(https://final-bookstore-backend.vercel.app/create-order', {
         amount: item.price, // Amount in paise (e.g., 500 INR = 50000 paise)
         currency: 'INR',
         receipt: 'receipt_123',
