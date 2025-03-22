@@ -12,7 +12,7 @@ const Freebook = () => {
   useEffect(() =>{
     const getBook = async () => {
     try{
-      const res = await axios.get('https://final-bookstore-backend.vercel.app/book');
+      const res = await axios.get('http://localhost:4001/book');
      
       const xx = res.data.filter((data) => data.category === "Free");
       console.log(xx);
@@ -68,11 +68,15 @@ const Freebook = () => {
       <p className='text-black dark:text-white p-2'>Access a wide range of books at no cost. Your learning adventure awaits! </p>
       </div>
       <div>
-      <Slider {...settings}>
-        {book.map((item) =>(
-          <Cards item = {item} key = {item.id}/>
-        ))}
-      </Slider>
+      {book.length > 0 ? (  // Ensure data is available before rendering the slider
+          <Slider {...settings}>
+            {book.map((item) => (
+              <Cards item={item} key={item.id} />
+            ))}
+          </Slider>
+        ) : (
+          <p className="text-center text-gray-500">Loading books...</p>  // Display a loading message until data is fetched
+        )}
       </div>
        
     </div>
