@@ -203,7 +203,9 @@ const Cards = ({ item }) => {
               item.price === 0 ? (
                 <div className="flex justify-center w-full">
                   <button className="cursor-pointer px-4 py-1 rounded-full border-[2px] hover:bg-pink-500 
-                  hover:text-white duration-300 badge-outline text-sm sm:text-xs">
+                  hover:text-white duration-300 badge-outline text-sm sm:text-xs"
+                    onClick={showPdf}
+                  >
                     Read
                   </button>
                 </div>
