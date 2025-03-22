@@ -101,7 +101,7 @@ const Cards = ({ item }) => {
  
       
       const decodedToken = jwtDecode(localStorage.getItem('token'));     
-      const response = await axios.post(https://final-bookstore-backend.vercel.app/create-order', {
+      const response = await axios.post("https://final-bookstore-backend.vercel.app/create-order", {
         amount: item.price, // Amount in paise (e.g., 500 INR = 50000 paise)
         currency: 'INR',
         receipt: 'receipt_123',
