@@ -73,7 +73,7 @@ const Login = () => {
                   </svg>
                   <input
                     type="email"
-                    className="grow p-2 border border-black rounded-md outline-none text-black"
+                    className="grow p-2 border border-black rounded-md outline-none dark:text-white text-black"
                     placeholder="Email"
                     {...register('email', { required: true })}
                   />
@@ -99,7 +99,7 @@ const Login = () => {
                   </svg>
                   <input
                     type="password"
-                    className="grow p-2 border border-black rounded-md outline-none text-black"
+                    className="grow p-2 border border-black rounded-md outline-none dark:text-white text-black"
                     placeholder="Password"
                     {...register('password', { required: true })}
                   />
