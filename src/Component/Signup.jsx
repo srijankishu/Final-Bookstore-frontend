@@ -20,7 +20,7 @@ export const Signup = () => {
           password: data.password,
           email: data.email, 
         };
-         await axios.post("https://final-bookstore-backend.vercel.app/user/signup", userInfo)
+         await axios.post("https://final-bookstore-backend-1000.vercel.app/user/signup", userInfo)
         .then((res)=>{
           console.log(res.data);
           if(res.data){
